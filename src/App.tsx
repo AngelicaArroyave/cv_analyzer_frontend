@@ -1,8 +1,9 @@
 import './App.css'
+import { MainLayout } from './layouts/MainLayout'
 
 function App() {
   return (
-    <h1 className='font-bold'>Hello Vite!</h1>
+    <MainLayout />
   )
 }
 
