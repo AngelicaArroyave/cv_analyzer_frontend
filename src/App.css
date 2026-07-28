@@ -215,6 +215,7 @@
     min-height: 100vh;
     margin: 0;
     background: var(--gradient-page);
+    background-attachment: fixed;
     color: var(--color-ink);
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
