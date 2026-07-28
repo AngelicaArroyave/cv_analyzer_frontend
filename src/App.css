@@ -187,15 +187,11 @@
       #7d5cfa 100%);
 
   --gradient-page:
-    radial-gradient(circle at 85% 10%,
-      rgba(232, 222, 255, 0.85),
-      transparent 28%),
-    radial-gradient(circle at 5% 90%,
-      rgba(91, 61, 245, 0.08),
-      transparent 24%),
-    linear-gradient(180deg,
-      #fcfbff 0%,
-      #f8f6ff 100%);
+    radial-gradient(at 80% 0%, rgba(213, 197, 255, 0.7) 0px, transparent 40%),
+    radial-gradient(at 0% 100%, rgba(91, 61, 245, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(232, 222, 255, 0.8) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(252, 251, 255, 1) 0px, transparent 100%),
+    linear-gradient(180deg, #f8f6ff 0%, #f2eeff 100%);
 
   --gradient-card:
     linear-gradient(145deg,
