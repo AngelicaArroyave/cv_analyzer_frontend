@@ -1,6 +1,6 @@
 export const AnalyzerPage = () => {
     return (
-        <div className="flex flex-col gap-8 w-[calc(100%-3rem)] md:w-[calc(100%-6rem)] max-w-[1100px] mx-auto p-8 md:p-12 lg:p-16 bg-surface rounded-[2rem] shadow-card border border-border-strong relative z-10 -mt-4">
+        <div className="flex flex-col gap-8 w-[calc(100%-3rem)] md:w-[calc(100%-6rem)] max-w-275 mx-auto p-8 md:p-12 lg:p-16 bg-surface rounded-[2rem] shadow-card border border-border-strong relative z-10 -mt-4">
             <div className="flex gap-6 md:gap-10">
                 <div className="flex flex-col items-center gap-4">
                     <div className="text-surface font-bold bg-primary-light rounded-full w-12 h-12 flex items-center justify-center text-lg shrink-0">1</div>
@@ -28,7 +28,7 @@ export const AnalyzerPage = () => {
                     <div className="pt-4 text-muted shrink-0 flex gap-2 items-center text-sm font-medium">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                             <path d="M0 0h16v16H0z" fill="none" />
-                            <path fill="currentColor" fill-rule="evenodd" d="M12.5 6v8.5h-9v-13H8v2.75C8 5.216 8.784 6 9.75 6zm-.121-1.5L9.5 1.621V4.25c0 .138.112.25.25.25zM2 1a1 1 0 0 1 1-1h6.586a1 1 0 0 1 .707.293l3.414 3.414a1 1 0 0 1 .293.707V15a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm3.75 7a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zM5 11.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75" clip-rule="evenodd" />
+                            <path fill="currentColor" fillRule="evenodd" d="M12.5 6v8.5h-9v-13H8v2.75C8 5.216 8.784 6 9.75 6zm-.121-1.5L9.5 1.621V4.25c0 .138.112.25.25.25zM2 1a1 1 0 0 1 1-1h6.586a1 1 0 0 1 .707.293l3.414 3.414a1 1 0 0 1 .293.707V15a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm3.75 7a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zM5 11.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75" clipRule="evenodd" />
                         </svg>
                         <p>Formato PDF • Máx. 10 MB</p>
                     </div>
