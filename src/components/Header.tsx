@@ -1,13 +1,14 @@
 import bannerImg from '../assets/illustrations/banner.png'
 
 interface HeaderProps {
-    results: boolean
+    results?: boolean;
+    suggestions?: boolean;
 }
 
-export const Header = ({ results }: HeaderProps) => {
+export const Header = ({ results, suggestions }: HeaderProps) => {
     return (
         <header className="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16 px-6 md:px-12 lg:px-16 max-w-[1400px] mx-auto pt-10">
-            {!results && (
+            {!results && !suggestions && (
                 <>
                     <div className="flex flex-col gap-6 max-w-2xl w-full">
                         <div className="flex flex-col gap-4">
@@ -64,34 +65,67 @@ export const Header = ({ results }: HeaderProps) => {
                     </div>
                 </>
             )}
-            {results && (
+            
+            {results && !suggestions && (
                 <div className="flex gap-16 w-full">
                     <div className="flex flex-col gap-4">
                         <h1 className="text-4xl md:text-5xl font-black text-ink tracking-tight">Resultados del análisis</h1>
                         <p className="text-lg text-muted-light font-medium leading-relaxed max-w-xl">Observa el nivel de coincidencia y las oportunidades de mejora detectadas por la IA.</p>
                     </div>
                     <div className="flex gap-4 items-center justify-center">
-                        <button className="flex gap-3 items-center text-primary font-semibold bg-primary-soft rounded-xl py-3 px-6 cursor-pointer border border-primary-light hover:bg-primary hover:text-primary-soft">
+                        <button className="flex gap-3 items-center text-primary font-semibold bg-primary-soft rounded-xl py-3 px-6 cursor-pointer border border-primary-light hover:bg-primary hover:text-primary-soft transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                 <path d="M0 0h24v24H0z" fill="none" />
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                     <path d="M22 12c0 6-4.39 10-9.806 10C7.792 22 4.24 19.665 3 16m-1-4C2 6 6.39 2 11.807 2C16.208 2 19.758 4.335 21 8" />
                                     <path d="m7 17l-4-1l-1 4M17 7l4 1l1-4" />
                                 </g>
                             </svg>
-
                             <span className='text-sm'>Analizar otra oferta</span>
                         </button>
-                        <button className="flex gap-3 items-center text-primary-soft bg-primary rounded-xl py-3 px-6 cursor-pointer font-semibold hover:text-primary hover:bg-primary-soft hover:border hover:border-primary-light">
+                        <button className="flex gap-3 items-center text-primary-soft bg-primary rounded-xl py-3 px-6 cursor-pointer font-semibold hover:text-primary hover:bg-primary-soft hover:border hover:border-primary-light transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
                                 <path d="M0 0h24v24H0z" fill="none" />
                                 <path fill="currentColor" d="M11.625 15.513q-.175-.063-.325-.213l-3.6-3.6q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L11 12.15V5q0-.425.288-.712T12 4t.713.288T13 5v7.15l1.875-1.875q.3-.3.713-.288t.712.313q.275.3.288.7t-.288.7l-3.6 3.6q-.15.15-.325.213t-.375.062t-.375-.062M6 20q-.825 0-1.412-.587T4 18v-2q0-.425.288-.712T5 15t.713.288T6 16v2h12v-2q0-.425.288-.712T19 15t.713.288T20 16v2q0 .825-.587 1.413T18 20z" />
                             </svg>
-
                             <span className='text-sm'>Descargar PDF</span>
                         </button>
                     </div>
                 </div>
+            )}
+
+            {suggestions && (
+                <>
+                    <div className="flex flex-col gap-5 md:gap-6 max-w-2xl w-full">
+                        <button className="w-fit flex items-center gap-2 text-primary font-bold text-sm bg-primary-soft/50 hover:bg-primary-soft transition-colors px-4 py-2 rounded-xl border border-primary-soft/30 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="m15 18l-6-6l6-6"/>
+                            </svg>
+                            Volver a resultados
+                        </button>
+                        <div className="flex flex-col gap-3">
+                            <h1 className="text-4xl md:text-5xl font-bold text-ink tracking-tight">Sugerencias de mejora</h1>
+                            <p className="text-lg text-muted-light font-semibold leading-relaxed max-w-xl">
+                                Recomendaciones personalizadas para optimizar tu CV según la oferta analizada.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center md:items-end gap-3 shrink-0 flex-1 w-full mt-8 lg:mt-0">
+                        <div className="flex justify-center md:justify-end w-full">
+                            <img src={bannerImg} alt="Sugerencias" className="max-w-100 w-full object-contain" style={{ maskImage: "radial-gradient(ellipse 90% 90% at 50% 50%, black 45%, transparent 80%)", WebkitMaskImage: "radial-gradient(ellipse 90% 90% at 50% 50%, black 45%, transparent 80%)" }} />
+                        </div>
+                        <button className="flex gap-2.5 items-center text-primary font-semibold bg-secondary-hover hover:bg-primary-soft transition-colors rounded-xl py-2 px-5 cursor-pointer border border-border-strong">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                                    <path d="M22 12c0 6-4.39 10-9.806 10C7.792 22 4.24 19.665 3 16m-1-4C2 6 6.39 2 11.807 2C16.208 2 19.758 4.335 21 8" />
+                                    <path d="m7 17l-4-1l-1 4M17 7l4 1l1-4" />
+                                </g>
+                            </svg>
+                            <span className='text-sm'>Analizar otra oferta</span>
+                        </button>
+                    </div>
+                </>
             )}
         </header>
     )
